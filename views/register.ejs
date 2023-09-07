@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/css/register.css">
+</head>
+<body>
+    <div class="register-form">
+        <h1>Register</h1>
+        <%- include ('./partials/messages') %>
+
+        <form action="/users/register" method="POST">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            name="name"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+
+          <label for="lastname">Lastname</label>
+          <input
+            type="lastname"
+            name="lastname"
+            placeholder="Enter Lastname"
+            value="<%= typeof lastname != 'undefined' ? lastname : '' %>"
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+
+			<button type="submit">Register</button>
+      
+        </form>
+    </div>
+</body>
+</html>

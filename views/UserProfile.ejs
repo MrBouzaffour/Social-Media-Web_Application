@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<a href="#">Bonga</a>
+		</div>
+		<ul>
+            <li><a href="/dashboard/feed">Home</a></li>
+			<li><a href="profile.html">Profile</a></li>
+			<li><a href="settings.html">Settings</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</nav>
+	<div class="profile">
+		<img src="https://picsum.photos/200" alt="Profile Picture">
+		<h2><%= UserName %></h2>
+			<% if (isFriend) { %>
+				<form action="/dashboard/removefreind" method="post">
+
+				<button class="add-friend-button" name="userId" value="<%= UserName %>">Remove Friend</button>
+			</form>
+
+				<% } else { %>
+					<form action="/dashboard/addfreind" method="post">
+
+				
+					<button class="add-friend-button" name="userId" value="<%= UserName %>">Add Friend</button>
+					</form>
+
+						<% } %>
+	</div>
+  
+	<div class="container">
+		<% posts.forEach(function(post) { %>
+			<div class="post">
+				<div class="post-header">
+					<img src="https://picsum.photos/200" alt="Profile Picture">
+					<h2><%= UserName %></h2>
+				</div>
+				<div class="post-content">
+					<p><%= post.content %></p>
+				</div>
+				<div class="post-footer">
+					<div class="likes">
+						<form action="/dashboard/addLike" method="POST">
+							<button type="submit" class="like-button" name="postId" value="<%= post._id %>"><i class="fa fa-heart"></i> Like</button>
+							<span class="like-count">5 likes</span>
+						</form>
+					</div>
+					<div class="comments">
+						<span class="comment-count"><a href="/dashboard/comments">1 comment</a></span>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/accept_reject.css">
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <a href="#">BONGA</a>
+  </div>
+
+  <div class="search">
+    <form action="/dashboard/search" method="POST">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" name="search_bar" placeholder="Search for another user please provide his name and lastname" onkeyup="sendData(this)">
+        <section id="searchResults"></section>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <ul>
+    <li><a href="/dashboard/<%=word %>">Profile</a></li>
+    <li><a href="settings.html">Settings</a></li>
+    <li><a href="/users/logout">Logout</a></li>
+  </ul>
+</nav>
+
+<h1>Friend Requests</h1>
+
+<div class="container">
+  <% if (list.length === 0) { %>
+    <p>No friend requests at the moment.</p>
+  <% } else { %>
+    <div class="friend-requests-box" id="friendRequests">
+      <% list.forEach(function(person) { %>	  
+        <div class="friend-request">
+          <img src="profile1.jpg" alt="Profile Picture">
+          <div class="info"><%= person.name %> <%= person.lastname %></div>
+          <div class="buttons">
+            <form action="/dashboard/accept" method="post">
+              <button class="accept" name="accept" value="<%=person.id%>">Accept</button>
+            </form>
+            <form action="/dashboard/reject" method="POST">
+              <button class="reject" name="reject" value="<%=person.id%>">Reject</button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</div>
+
+</body>
+</html>

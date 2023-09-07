@@ -1,0 +1,132 @@
+<link rel="stylesheet" type="text/css" href="/css/feed.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+        function toggleRightPanel() {
+            var rightPanel = document.getElementById('rightPanel');
+            rightPanel.classList.toggle('active');
+        }
+
+</script>
+</head>
+
+
+<body>
+	<nav>
+		<div class="logo">
+		  <a href="#">BONGA</a>
+
+
+		</div>
+
+		<div class="search">
+			<form action="/dashboard/search" method="POST">
+				<div class="search-bar">
+				  <i class="fas fa-search"></i>
+				  <input type="text" name="search_bar" placeholder="Search..." onkeyup="sendData(this)">
+				  <section id="searchResults"></section>
+				</div>
+				<button type="submit">Search</button>
+			  </form>
+			  
+		</div>
+
+
+	</nav>
+	  
+	  
+	
+	<div class="icons-container">
+
+		<a href="/dashboard/<%=word %>"  class="icon">
+            <i class="fa fa-user"></i>
+        </a>
+        <a href="/dashboard/freinds" class="icon">
+			<i class="fas fa-user-friends"></i>        </a>
+		<a href="settings.html" class="icon">
+			<i class="fa fa-cog" "></i>
+        </a>
+		<a href="/users/logout"" class="icon">
+			<i class="fa fa-sign-out" style="font-size:24px"></i>
+        </a>
+
+    </div>
+
+
+	
+	  </div>
+		<div class="container">
+
+			<div class="comment-section">
+				<h2>Write a post</h2>
+				<form action="/dashboard/feed" method="POST">
+					<label for="comment">Post:</label><br>
+					<textarea id="comment" name="post"></textarea><br>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<% list.forEach(function(person) { %>	  
+				<div class="post">
+					<div class="post-header">
+						<img src="https://picsum.photos/200" alt="Profile Picture">
+						<h2><%= person.username %></h2>
+					</div>
+					<div class="post-content">
+						<p><%= person.content %></p>
+					</div>
+					<div class="post-footer">
+
+						<form id="Like-Post">
+						<div class="likes">
+							<button id="like-button" type="submit" class="like-button" name="postId" value="<%= person.pId %>">
+								<i class="fa fa-heart"></i><%= person.likes %> Like
+							</button>
+						</div>
+						</form>
+
+						<div class="comments">
+							<span class="comment-count"><a href="/dashboard/comments">1 comment</a></span>
+						</div>
+					</div>
+					<div class="comment-form-post">
+						<form>
+							<input type="text" placeholder="Write a comment...">
+							<button type="submit">Post</button>
+						</form>
+					</div>
+				</div>
+			<% }); %>
+			
+			
+			
+			
+	
+		
+		<!--Freinds-->
+		<div class="bar" onclick="toggleRightPanel()">
+			<div class="bar-icon">
+			  <i class="fas fa-users"></i>
+			</div>
+		  </div>
+		  <div class="right-panel" id="rightPanel">
+			<div class="friends-section">
+			  <h4>Friends</h4>
+			  <% if (friend && Array.isArray(friend)) { %>
+				<% friend.forEach(function(friend) { %>	  
+				  <a class="friend" href="/dashboard/<%= friend.name %>/<%= friend.lastname %>">
+					<div class="dp">
+					  <img src="https://picsum.photos/50" alt="Profile Picture">
+					</div>
+					<p class="name"><%= friend.name %>  <%= friend.lastname %></p>
+				  </a>
+				<% }); %>
+			  <% } else { %>
+				<p>You don't have any friends yet.</p>
+			  <% } %>
+			</div>
+
+	  
+	
+			
+</body>
+</html>

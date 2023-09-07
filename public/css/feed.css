@@ -1,0 +1,511 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #cfe3e7;
+  }
+  
+  nav {
+    background-color: #3e4f55;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 50px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .logo a {
+    color: #f0f6f7;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0 20px;
+  }
+  
+  li a {
+    color: #f0f6f7;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    color: #5f4b66;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .search form {
+    display: flex;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 8px;
+    border-radius: 9999px;
+    width: 200px;
+  }
+  
+  .search-bar i {
+    font-size: 10px;
+    color: #5f4b66;
+    margin-right: 8px;
+  }
+  
+  .search-bar input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .search button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5f4b66;
+    color: #f0f6f7;
+    cursor: pointer;
+    font-size: 17px;
+    margin-left: 8px;
+  }
+  
+  
+.icons-container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.icon:hover {
+  background: #555;
+}
+
+  .container {
+    max-width: 800px;
+    margin: 80px auto 0;
+    padding: 20px;
+    background-color: #f0f6f7;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post {
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #cfe3e7;
+  }
+  
+  .post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .post-content {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    border-top: 1px solid #cfe3e7;
+  }
+
+  .post-footer p {
+    margin: 0;
+    color: #9b9b9b;
+  }
+  
+  .post-footer a {
+    text-decoration: none;
+    color: #5f4b66;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .post-footer a:hover {
+    color: #874c62;
+  }
+
+
+.comment-section {
+    margin: 20px auto 50px;
+	padding: 20px;
+    max-width: 1000px;
+    background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	margin-top: 0;
+	color: #2d3142;
+}
+
+form {
+	margin-top: 20px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #2d3142;
+}
+
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	resize: none;
+	background-color: #e4f2f2;
+	color: #2d3142;
+	font-size: 16px;
+}
+
+input[type="submit"] {
+	background-color: #5f4b66;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	background-color: #874c62;
+}
+
+
+.search-form-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search-form-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.like-button {
+  background-color: #f0f6f7;
+  color: #5f4b66;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.like-button:hover {
+  background-color: #5f4b66;
+  color: #f0f6f7;
+}
+
+.like-button i {
+  margin-right: 5px;
+}
+
+
+.fa-heart {
+	margin-right: 5px;
+}
+
+
+
+.comment {
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #e4f2f2;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.comment h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.comment p {
+	margin: 0;
+	color: #2d3142;
+	font-size: 16px;
+}
+.comment-form-post form {
+  display: flex;
+  align-items: center;
+}
+
+
+.comment-form-post input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-form-post button[type="submit"] {
+  background-color: #5f4b66;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.comment-form-post button[type="submit"]:hover {
+  background-color: #874c62;
+}
+.connected-friends {
+  width: 200px;
+  top: 0px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.connected-friends h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.connected-friends button {
+  background-color: #fff;
+  color: #385898;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.connected-friends button:hover {
+  background-color: #f7f7f7;
+}
+
+.connected-friends button:after {
+  content: "+";
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.connected-friends button.active:after {
+  content: "-";
+}
+
+.connected-friends ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  max-height: 200px; /* change this value to the desired max-height */
+  overflow: auto;
+}
+
+.connected-friends ul li {
+  margin-bottom: 5px;
+}
+
+.connected-friends ul li a {
+  color: #385898;
+  text-decoration: none;
+}
+
+.connected-friends ul li a:hover {
+  text-decoration: underline;
+}
+
+.connected-friends #friends-list.active {
+  display: block;
+}
+
+
+/* Freinds */
+
+.bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 60px; /* Adjust width as needed */
+  height: 60px; /* Adjust height as needed */
+  background-color: #333;
+  z-index: 9999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+}
+
+.bar-icon {
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-icon i {
+  font-size: 16px; /* Adjust size as needed */
+}
+
+
+/* Rest of the CSS rules */
+
+
+.right-panel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 50%;
+  background-color: #f5f6f8;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 9998;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transform: translateY(100%); /* Updated: translateY instead of translateX */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.right-panel.active {
+  transform: translateX(0);
+}
+
+
+
+.pages-section,
+.friends-section {
+  margin-bottom: 20px;
+}
+
+.pages-section h4,
+.friends-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pages-section .page,
+.friends-section .friend {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pages-section .dp,
+.friends-section .dp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.pages-section .dp img,
+.friends-section .dp img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pages-section .name,
+.friends-section .name {
+  font-size: 14px;
+  font-weight: bold;
+}
+

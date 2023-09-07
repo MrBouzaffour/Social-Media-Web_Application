@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #cfe3e7;
+  }
+nav {
+	background-color: #3e4f55;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 50px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.logo a {
+	color: #f0f6f7;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0 20px;
+}
+
+li a {
+	color: #f0f6f7;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: #5f4b66;
+}
+.search {
+  margin-left: 250px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search form {
+  display: flex;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f5;
+  padding: 8px;
+  border-radius: 9999px;
+  width: 400px;
+}
+
+.search-bar i {
+  font-size: 10px;
+  color: #5f4b66;
+  margin-right: 8px;
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 18px;
+}
+
+.search button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5f4b66;
+  color: #f0f6f7;
+  cursor: pointer;
+  font-size: 17px;
+  margin-left: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .friend-requests-box {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .friend-request {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .friend-request img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .friend-request .info {
+    flex: 1;
+    font-weight: bold;
+  }
+
+  .friend-request .buttons {
+    display: flex;
+  }
+
+  .friend-request .buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .friend-request .buttons button.accept {
+    background-color: #5f4b66;
+    color: #ffffff;
+  }
+
+  .friend-request .buttons button.reject {
+    background-color: #f44336;
+    color: #ffffff;
+  }

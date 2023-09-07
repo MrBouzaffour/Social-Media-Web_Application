@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mobile-Friendly Page</title>
+	<link rel="stylesheet" type="text/css" href="/css/profile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+	<nav>
+		<div class="logo">
+		  <a href="#">Bam</a>
+
+
+		</div>
+
+		<div class="search">
+			<form action="/dashboard/search" method="POST">
+				<div class="search-bar">
+				  <i class="fas fa-search"></i>
+				  <input type="text" name="search_bar" placeholder="Search..." onkeyup="sendData(this)">
+				  <section id="searchResults"></section>
+				</div>
+				<button type="submit">Search</button>
+			  </form>
+			  
+		</div>
+
+
+	</nav>
+
+	<div class="icons-container">
+
+
+        <a href="/dashboard/freinds" class="icon">
+			<i class="fas fa-user-friends"></i>        </a>
+		<a href="settings.html" class="icon">
+			<i class="fa fa-cog" "></i>
+        </a>
+		<a href="/users/logout"" class="icon">
+			<i class="fa fa-sign-out" style="font-size:24px"></i>
+        </a>
+
+    </div>
+
+	<div class="profile">
+		<img src="https://picsum.photos/200" alt="Profile Picture">
+		<h2><%= UserName %></h2>
+	</div>
+    
+	<div class="container">
+		<% posts.forEach(function(posts) { %>
+			<div class="post">
+				<div class="post-header">
+					<img src="https://picsum.photos/200" alt="Profile Picture">
+					<h2><%= UserName %></h2>
+				</div>
+				<div class="post-content">
+					<p><%= posts.content %></p>
+				</div>
+				<div class="post-footer">
+					<div class="likes">
+						<button id="like-button" type="submit" class="like-button" name="postId" value="<%= posts._id %>">
+							<i class="fa fa-heart"></i> Like
+						</button>
+						<span id="like-count"><%= posts.likes %> likes</span>
+					</div>
+					<div class="comments">
+						<span class="comment-count"><a href="/dashboard/comments">3 comments</a></span>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+	<script>
+		const menuIcon = document.getElementById("menu-icon");
+		const menu = document.querySelector(".menu");
+
+		menuIcon.addEventListener("change", function() {
+			if (this.checked) {
+				menu.classList.add("show");
+			} else {
+				menu.classList.remove("show");
+			}
+		});
+	</script>
+</body>
+</html>
